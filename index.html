@@ -5,244 +5,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testimonial Slider</title>
+  <title>Error 404 page</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
-    * {
+    body {
       margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      color: #000;
-      font-family: 'Nunito', sans-serif;
-    }
-
-    .testimonial {
-      height: 100%;
+    .container {
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-bottom: 5rem;
+      flex-direction: column;
+      background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, .1)), url('https://images.unsplash.com/photo-1595624871930-6e8537998592?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     h1 {
-      margin: 20px 0;
+      font-size: 10rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
-    .line {
-      height: 2px;
-      width: 6rem;
-      background-color: #e26c4f;
-      margin-bottom: calc(3rem + 2vmin);
+    h2 {
+      font-size: 2rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
-    .arrow-wrapper {
-      position: relative;
-      width: 70%;
-      border-radius: 2rem;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      overflow: hidden;
-      place-items: center;
+    p {
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
-    .review-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: calc(2rem + 1vmin);
-      width: 100%;
-    }
-
-    #imgBox {
-      border-radius: 50%;
-      width: calc(6rem + 4vmin);
-      height: calc(6rem + 4vmin);
-      position: relative;
-      box-shadow: 5px -3px #e26c4f;
-      background-size: cover;
-      margin-bottom: calc(0.7rem + 0.5vmin);
-    }
-
-    #name {
-      margin-bottom: calc(0.7rem + 0.5vmin);
-      font-size: calc(1rem + 0.5vmin);
-      letter-spacing: calc(0.1rem + 0.1vmin);
-      font-weight: bold;
-    }
-
-    #profession {
-      font-size: calc(0.8rem + 0.3vmin);
-      margin-bottom: calc(0.7rem + 0.5vmin);
-      color: #e26c4f;
-    }
-
-    #description {
-      font-size: calc(0.8rem + 0.3vmin);
-      width: 70%;
-      max-width: 40rem;
-      text-align: center;
-      margin-bottom: calc(1.4rem + 1vmin);
-      color: rgb(92, 92, 92);
-      line-height: 2rem;
-    }
-
-    .arrow {
-      width: calc(1.4rem + 0.6vmin);
-      height: calc(1.4rem + 0.6vmin);
-      border: solid #e26c4f;
-      border-width: 0 calc(0.5rem + 0.2vmin) calc(0.5rem + 0.2vmin) 0;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .arrow:hover {
-      transition: 0.3s;
-      transform: scale(1.15);
-    }
-
-    .left-arrow-wrap {
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      transform: rotate(135deg);
-    }
-
-    .right-arrow-wrap {
-      position: absolute;
-      top: 50%;
-      right: 5%;
-      transform: rotate(-45deg);
-    }
-
-    @media screen and (max-width: 900px) {
-      .testimonial {
-        width: 100%;
-      }
+    a {
+      padding: 15px 20px;
+      background: #52caee;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #333333;
+      border-radius: .25rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.808)
     }
   </style>
 </head>
 
 <body>
-  <div class="testimonial">
-    <h1>About me</h1>
-    <div class="line"></div>
-    <!-- arrow wrapper contains the review and the arrows -->
-    <div class="arrow-wrapper">
-      <!-- review section -->
-      <div id="reviewWrap" class="review-wrap">
-        <div id="imgBox"></div>
-        <div id="name"></div>
-        <div id="profession"></div>
-        <div id="description"></div>
-      </div>
-      <!-- left arrow -->
-      <div class="left-arrow-wrap">
-        <div class="arrow"></div>
-      </div>
-      <!-- right arrow -->
-      <div class="right-arrow-wrap">
-        <div class="arrow"></div>
-      </div>
-    </div>
+  <div class="container">
+    <h1>404</h1>
+    <h2>Page not found</h2>
+    <p>The page you are looking for does not exist.</p>
+    <p><a href="#">Visit Homepage</a></p>
   </div>
-
-  <script>
-    const reviewWrap = document.getElementById("reviewWrap");
-    const leftArrow = document.querySelector(".left-arrow-wrap .arrow");
-    const rightArrow = document.querySelector(".right-arrow-wrap .arrow");
-    const imgBox = document.getElementById("imgBox");
-    const name = document.getElementById("name");
-    const profession = document.getElementById("profession");
-    const description = document.getElementById("description");
-
-    let people = [{
-        photo: 'url("https://commons.wikimedia.org/wiki/File:Moon.jpg")',
-        name: "Borys Kondrashov",
-        profession: "DevOps Engineer",
-        description: " Named Time Magazine's Person of the Year in 2006
-      },
-      {
-        photo: "url("https://commons.wikimedia.org/wiki/File:Moon.jpg")",
-        name: "Borys Kondrashov",
-        profession: " DevOps Engineer ",
-        description: "Automation: DevOps Engineers are responsible for automating various aspects of the software development lifecycle, including building, testing, deployment, and infrastructure provisioning. Automation tools and scripts are used to reduce manual intervention and increase the speed and consistency of deployments."
-      },
-      {
-        photo: "url('https://commons.wikimedia.org/wiki/File:Moon.jpg')",
-        name: " Borys Kondrashov ",
-        profession: " DevOps Engineer ",
-        description: "Continuous Integration and Continuous Deployment (CI/CD): DevOps Engineers implement CI/CD pipelines, which enable frequent and automated code integration, testing, and deployment. This practice helps deliver new features and updates to users quickly and with minimal risk."
-      },
-      {
-        photo: "url('https://media.licdn.com/dms/image/D4E03AQF97czmaC0kOQ/profile-displayphoto-shrink_800_800/0/1676769167585?e=1699488000&v=beta&t=5XzDnKi8CY1aUljqJU20PrOKLCAgIC_5P81B0dcAfCI ')",
-        name: "Borys Kondrashov",
-        profession: "DevOps Engineer",
-        description: "Infrastructure as Code (IaC): DevOps Engineers use IaC principles and tools to manage infrastructure provisioning and configuration. Infrastructure is defined and managed through code, allowing for consistent and repeatable setups. "
-      }
-    ];
-
-    // set the first person
-    imgBox.style.backgroundImage = people[0].photo;
-    name.innerText = people[0].name;
-    profession.innerText = people[0].profession;
-    description.innerText = people[0].description;
-    let currentPerson = 0;
-
-    //Select the side where you want to slide
-    function slide(side, personNumber) {
-      let reviewWrapWidth = reviewWrap.offsetWidth + "px";
-      let descriptionHeight = description.offsetHeight + "px";
-      //(+ or -)
-      let side1symbol = side === "left" ? "" : "-";
-      let side2symbol = side === "left" ? "-" : "";
-
-      setTimeout(() => {
-        imgBox.style.backgroundImage = people[personNumber].photo;
-      }, 0);
-      setTimeout(() => {
-        description.style.height = descriptionHeight;
-      }, 100);
-      setTimeout(() => {
-        name.innerText = people[personNumber].name;
-      }, 200);
-      setTimeout(() => {
-        profession.innerText = people[personNumber].profession;
-      }, 300);
-      setTimeout(() => {
-        description.innerText = people[personNumber].description;
-      }, 400);
-    }
-
-    function setNextCardLeft() {
-      if (currentPerson === 3) {
-        currentPerson = 0;
-        slide("left", currentPerson);
-      } else {
-        currentPerson++;
-      }
-
-      slide("left", currentPerson);
-    }
-
-    function setNextCardRight() {
-      if (currentPerson === 0) {
-        currentPerson = 3;	
-        slide("right", currentPerson);
-      } else {
-        currentPerson--;
-      }
-
-      slide("right", currentPerson);
-    }
-
-    leftArrow.addEventListener("click", setNextCardLeft);
-    rightArrow.addEventListener("click", setNextCardRight);
-  </script>
 </body>
 
 </html>
